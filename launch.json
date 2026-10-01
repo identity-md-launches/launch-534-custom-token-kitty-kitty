@@ -1,0 +1,20 @@
+{
+  "kind": "custom_token",
+  "token": {
+    "contract": "Kitty",
+    "name": "Kitty",
+    "symbol": "KITTY",
+    "decimals": 18,
+    "constructorArgs": ["$factory", "$poolManager", "$launchNumber"],
+    "totalSupply": "1000000000000000000000000000"
+  },
+  "contracts": [],
+  "pool": {
+    "pairedCurrency": "0x0000000000000000000000000000000000000000",
+    "fee": 3000,
+    "tickSpacing": 60,
+    "initialPrice": "792281625142643375935439503360000"
+  },
+  "economics": {"poolBps":8000,"initialMarketCapWei":"10000000000000000000","remainderTo":"0x047f606fd5b2baa5f5c6c4ab8958e45cb6b054b7"},
+  "notes": "Kitty mints 1,000,000,000 KITTY with 18 decimals once to msg.sender in its constructor. Constructor arguments are factory (address), poolManager (address), and launchNumber (uint64), in declaration order. Ordinary transfer and transferFrom operations send floor(amount / 50) to 0x000000000000000000000000000000000000dEaD and the remainder to the recipient; totalSupply is unchanged. Transfers from or to the factory, pool manager, or current rewards distributor are exempt. The distributor is resolved at transfer time through factory.distributorOf(launchNumber), which must return the launch's distributor before claims. No application contracts or initialization calls are needed. The native ETH pool uses a 0.3% fee and tick spacing 60. initialPrice is sqrtPriceX96 for the KITTY-minor-units/wei ratio implied by the supplied supply and 10 ETH market cap, with native ETH as currency0; it is provenance only. The deployer derives the opening price from economics.initialMarketCapWei and token.totalSupply."
+}
